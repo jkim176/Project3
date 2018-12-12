@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: project3
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: md
+Implementation-Vendor-Id: com.jkim176
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/project3
+Created-By: Maven Integration for Eclipse
+
