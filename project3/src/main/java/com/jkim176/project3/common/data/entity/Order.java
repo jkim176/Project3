@@ -31,7 +31,7 @@ public class Order {
 	private Date dateShipped;
 	
 	@ManyToOne
-	@JoinColumn(name="CUSTOMER_ORDER_ID")
+	@JoinColumn(name="ORDER_CUSTOMER_ID")
 	private Customer customer;
 	
 	protected Order() {}
