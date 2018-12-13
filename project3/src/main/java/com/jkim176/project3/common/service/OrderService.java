@@ -8,6 +8,6 @@ import com.jkim176.project3.common.data.entity.Customer;
 
 public interface OrderService {
 
-	Optional<Customer> findById(long id);
+	Customer findCustomer(long id);
 	List<Order> findOrderByCustomer(long id);
 }

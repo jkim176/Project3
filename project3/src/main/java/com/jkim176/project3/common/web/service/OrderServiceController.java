@@ -21,12 +21,12 @@ public class OrderServiceController {
 	private OrderService orderService;
 	
 	@RequestMapping(method=RequestMethod.GET, value="/customer/{id}")
-	public Optional<Customer> findById(@PathVariable("id") long id) {
-		return this.orderService.findById(id);
+	public Customer getCustomer(@PathVariable("id") long id) {
+		return this.orderService.findCustomer(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/orderservice/{id}")
-	public List<Order> findAllOrdersByCustomer(@PathVariable("id") long id) {
+	@RequestMapping(method=RequestMethod.GET, value="/orders/{id}")
+	public List<Order> getOrderByCustomer(@PathVariable("id") long id) {
 		return this.orderService.findOrderByCustomer(id);
 	}
 }

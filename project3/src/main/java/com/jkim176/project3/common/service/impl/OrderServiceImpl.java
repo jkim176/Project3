@@ -25,19 +25,28 @@ public class OrderServiceImpl implements OrderService {
 		this.orderRepository = orderRepository;
 	}
 	
-	public Optional<Customer> findById(long id) {
-		return this.customerRepository.findById(id);
+	public Customer findCustomer(long id) {
+		Optional<Customer> optionalCustomer = this.customerRepository.findById(id);
+		Customer customer;
+		if(optionalCustomer.isPresent()) {
+			customer = optionalCustomer.get();
+		}
+		else {
+			customer = null;
+		}
+		return customer;
 	}
 	
-	@Override
-	public List<Order> findOrderByCustomer(long customerId) {
+	public List<Order> findOrderByCustomer(long id) {
 		List<Order> orders = new ArrayList<>();
 		Iterable<Order> it = this.orderRepository.findAll();
-		it.forEach(order -> {
-			if(order.getCustomer().getId() == customerId) {
-				orders.add(order);
-			}
-		});
+		if(it != null) {
+			it.forEach(e -> {
+				if(e.getCustomer().getId() == id) {
+					orders.add(e);
+				}
+			});
+		}
 		
 		return orders;
 	}
