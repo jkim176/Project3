@@ -35,6 +35,11 @@ public class Order {
 	private Customer customer;
 	
 	protected Order() {}
+	
+	public Order(Customer customer, Date dateOrdered) {
+		this.customer = customer;
+		this.dateOrdered = dateOrdered;
+	}
 
 	public long getId() {
 		return id;

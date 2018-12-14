@@ -50,4 +50,14 @@ public class OrderServiceImpl implements OrderService {
 		
 		return orders;
 	}
+	
+	public Order addOrderByCustomer(Order order) {
+		this.orderRepository.save(order);
+		
+		return order;
+	}
+	
+	public void deleteOrderByCustomer(Order order) {
+		this.orderRepository.delete(order);
+	}
 }
